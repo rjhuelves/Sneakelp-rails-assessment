@@ -1,3 +1,3 @@
 class Brand < ApplicationRecord
-    has_many: sneakers 
+    has_many :sneakers 
 end

@@ -1,0 +1,26 @@
+<h1>Create a New Sneaker! </h1>
+
+<%= form_for(@sneaker) do |f| %>
+   <h4> Select a brand: </h4>
+    <div>
+        <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+    </div>
+    <h4> Or add a new brand:</h4>
+    <div>
+        <%= f.fields_for :brand do |b| %>
+            <%= b.label :name %>
+            <%= b.text_field :name %>
+        <% end %>
+    </div>
+    <h4> Enter Sneaker Information: </h4>
+    <div>
+        <%= f.label :model  %>
+        <%= f.text_field :model %>
+    </div>
+    <div>
+        <%= f.label :colorway %>
+        <%= f.text_field :colorway %>
+    </div>
+    <br>
+    <%= f.submit "Create Sneaker" %>
+<% end %>
