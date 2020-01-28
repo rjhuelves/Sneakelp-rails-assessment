@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create' #can be done without since it's already included w/ resources 
- 
+  delete '/logout' => 'sessions#destroy'
 
   resources :reviews
   resources :sneakers

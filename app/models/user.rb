@@ -3,6 +3,6 @@ class User < ApplicationRecord
     has_many :reviewed_sneakers, through: :reviews, source: :sneaker
     has_many :sneakers #sneaker that user has created 
 
-    validates :username, :email, uniqueness: true, pressence: true 
+    validates :username, :email, uniqueness: true, presence: true 
     has_secure_password 
 end
