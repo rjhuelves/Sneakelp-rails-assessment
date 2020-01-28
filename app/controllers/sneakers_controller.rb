@@ -4,6 +4,16 @@ class SneakersController < ApplicationController
         @sneaker.build_brand
     end 
 
+    def create 
+        @sneaker = Sneaker.new(sneaker_params)
+        @sneaker.user_id = session[:user_id]
+        if @sneaker.save 
+            redirect_to sneaker_path(@sneaker)
+        else 
+            render :new 
+        end 
+    end 
+
     private 
 
     def sneaker_params 
