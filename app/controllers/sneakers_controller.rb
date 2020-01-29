@@ -14,6 +14,9 @@ class SneakersController < ApplicationController
         end 
     end 
 
+    def show 
+    end 
+
     private 
 
     def sneaker_params 
