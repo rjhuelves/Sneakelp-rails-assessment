@@ -10,11 +10,15 @@ class ReviewsController < ApplicationController
     def create 
         @review = current_user.reviews.build(review_params)
         if @review.save 
-            redirect_to rewview_path(@review)
+            redirect_to review_path(@review)
         else
             flash[:errors] = @review.errors.full_messages 
             render :new 
         end 
+    end 
+
+    def show 
+        @review = Review.find_by_id(params[:id])
     end 
 
     def index 
