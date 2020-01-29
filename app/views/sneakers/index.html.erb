@@ -2,7 +2,7 @@
 
 <% @sneakers.each do |sneaker| %>
 
-<h3> <%= sneaker.model %> </h3>
+<h3> <%= sneaker.brand.name%> <%= sneaker.model %> </h3>
 <h4> <%= sneaker.colorway %> </h4>
 
 <% end %>

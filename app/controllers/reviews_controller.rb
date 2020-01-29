@@ -7,6 +7,16 @@ class ReviewsController < ApplicationController
         end 
     end 
 
+    def create 
+        @review = current_user.reviews.build(review_params)
+        if @review.save 
+            redirect_to rewview_path(@review)
+        else
+            flash[:errors] = @review.errors.full_messages 
+            render :new 
+        end 
+    end 
+
     def index 
     end 
 

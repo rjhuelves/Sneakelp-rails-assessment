@@ -1,7 +1,10 @@
+<h1>Add a Review for the </h1>
+<h2><%= @review.sneaker.brand.name%> <%= @review.sneaker.model%> (<%=@review.sneaker.colorway%>)</h2>
+<h4><%= flash[:error] %></h4>
 <%= form_for(@review) do |f| %>
     <div>
         <%= f.label :rating  %>
-        <%= f.number_field :rating %>
+        <%= f.number_field :rating, min:0, max:5 %>
     </div>
     <div>
         <%= f.label :title %>
@@ -9,7 +12,7 @@
     </div>
     <div>
         <%= f.label :content %>
-        <%= f.text_field :content %>
+        <%= f.text_area :content, size: "25x5"%>
     </div>
     <%= f.hidden_field :sneaker_id %>
     <br>
