@@ -15,6 +15,7 @@ class SneakersController < ApplicationController
     end 
 
     def show 
+        @sneaker = Sneaker.find_by_id(params[:id])
     end 
 
     def index 

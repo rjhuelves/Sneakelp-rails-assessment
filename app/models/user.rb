@@ -4,5 +4,6 @@ class User < ApplicationRecord
     has_many :sneakers #sneaker that user has created 
 
     validates :username, :email, uniqueness: true, presence: true 
+
     has_secure_password 
 end
