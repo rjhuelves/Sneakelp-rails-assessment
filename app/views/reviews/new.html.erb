@@ -1,6 +1,6 @@
 <h1>Add a Review for the </h1>
 <h2><%= @review.sneaker.brand.name%> <%= @review.sneaker.model%> (<%=@review.sneaker.colorway%>)</h2>
-<h4><%= flash[:error] %></h4>
+<%= flash[:error] %> 
 <%= form_for(@review) do |f| %>
     <div>
         <%= f.label :rating  %>

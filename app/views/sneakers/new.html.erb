@@ -1,9 +1,8 @@
 <h1>Create a New Sneaker! </h1>
-
 <%= form_for(@sneaker) do |f| %>
    <h4> Select a brand: </h4>
     <div>
-        <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+        <%= f.collection_select :brand_id, Brand.all, :id, :name, include_blank: 'Select One' %>
     </div>
     <h4> Or add a new brand:</h4>
     <div>
@@ -23,4 +22,5 @@
     </div>
     <br>
     <%= f.submit "Create Sneaker" %>
+
 <% end %>

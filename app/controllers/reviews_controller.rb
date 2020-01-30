@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
         if @review.save 
             redirect_to review_path(@review)
         else
-            flash[:errors] = @review.errors.full_messages 
+            flash[:errors] = @review.errors.full_messages
             render :new 
         end 
     end 
@@ -21,8 +21,13 @@ class ReviewsController < ApplicationController
         @review = Review.find_by_id(params[:id])
     end 
 
-    def index 
-    end 
+    def index
+        if @sneaker = Sneaker.find_by_id(params[:sneaker_id])
+            @reviews = @sneaker.reviews
+        else
+            @reviews = Review.all
+        end
+    end
 
     private 
     

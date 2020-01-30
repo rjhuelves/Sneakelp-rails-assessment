@@ -1,0 +1,7 @@
+<h1> All the reviews! </h1>
+
+<ul>
+<% @reviews.each do |r| %>
+    <li><%= r.sneaker.model%> (<%= r.sneaker.colorway%>) : <%= r.title%> - <%= r.rating%></li>
+<%end%>
+</ul>

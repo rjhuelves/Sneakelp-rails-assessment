@@ -2,7 +2,8 @@
 
 <% @sneakers.each do |sneaker| %>
 
-<h3> <%= sneaker.brand.name%> <%= sneaker.model %> </h3>
-<h4> <%= sneaker.colorway %> </h4>
+    <h3> <%= sneaker.brand.name%> <%= sneaker.model %> (<%= sneaker.colorway %>)</h3>
+
+    <%= link_to "Write a review", new_sneaker_review_path(sneaker.id)%>
 
 <% end %>
