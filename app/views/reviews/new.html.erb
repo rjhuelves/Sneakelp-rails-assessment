@@ -1,6 +1,7 @@
 <h1>Add a Review for the </h1>
+
+<%= render partial: 'layouts/errors', locals: {object: @review} %>
 <h2><%= @review.sneaker.brand.name%> <%= @review.sneaker.model%> (<%=@review.sneaker.colorway%>)</h2>
-<%= flash[:error] %> 
 <%= form_for(@review) do |f| %>
     <div>
         <%= f.label :rating  %>

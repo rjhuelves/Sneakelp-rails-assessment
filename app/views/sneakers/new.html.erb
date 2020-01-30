@@ -1,4 +1,5 @@
 <h1>Create a New Sneaker! </h1>
+<%= render partial: 'layouts/errors', locals: {object: @sneaker} %>
 <%= form_for(@sneaker) do |f| %>
    <h4> Select a brand: </h4>
     <div>

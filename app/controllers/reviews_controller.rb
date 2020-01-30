@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
             @review = Review.new
         end 
     end 
+    #allows for new review if nested or not. 
 
     def create 
         @review = current_user.reviews.build(review_params)
