@@ -5,6 +5,16 @@ class Sneaker < ApplicationRecord
   has_many :users, through: :reviews
   
   validates :model, presence: true
+  validate :not_a_duplicate
 
-  accepts_nested_attributes_for :brand 
+  def brand_attributes=(attributes)
+    brand = Brand.find_or_create_by(attributes) if !attributes['name'].empty?
+  end
+
+  def not_a_duplicate 
+    if Sneaker.find_by(model: model, colorway: colorway, brand_id: brand_id)
+        errors.add(:model, 'and colorway has already been added for that brand')
+    end
+  end 
+
 end
