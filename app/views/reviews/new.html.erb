@@ -1,21 +1,28 @@
 <h1>Add a Review for the </h1>
 
 <%= render partial: 'layouts/errors', locals: {object: @review} %>
-<h2><%= @review.sneaker.brand.name%> <%= @review.sneaker.model%> (<%=@review.sneaker.colorway%>)</h2>
+
 <%= form_for(@review) do |f| %>
-    <div>
-        <%= f.label :rating  %>
-        <%= f.number_field :rating, min:0, max:5 %>
-    </div>
-    <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </div>
-    <div>
-        <%= f.label :content %>
-        <%= f.text_area :content, size: "25x5"%>
-    </div>
-    <%= f.hidden_field :sneaker_id %>
+    <% if params[:sneaker_id]%>
+        <% f.hidden_field :sneaker_id%>
+    <% else %>
+        <div>
+            <%= f.label :sneaker_id, "Select a sneaker" %>
+            <%= f.collection_select :sneaker_id, Sneaker.all, :id, :model_and_brand, include_blank: true %>
+        </div>
+    <% end %>
+        <div>
+            <%= f.label :rating  %>
+            <%= f.number_field :rating, min:0, max:5 %>
+        </div>
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </div>
+        <div>
+            <%= f.label :content %>
+            <%= f.text_area :content, size: "25x5"%>
+        </div>
     <br>
     <%= f.submit %>
 
