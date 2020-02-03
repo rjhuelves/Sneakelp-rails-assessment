@@ -7,6 +7,10 @@ class Sneaker < ApplicationRecord
   validates :model, presence: true
   validate :not_a_duplicate #single validate used when custom validator build in model. 
 
+  def self.alpha
+    order(model: :asc)
+  end 
+  #scope method 
 
   def brand_attributes=(attributes)
     brand = Brand.find_or_create_by(attributes) if !attributes['name'].empty?
@@ -18,7 +22,7 @@ class Sneaker < ApplicationRecord
     end
   end 
 
-  def model_and_brand
-    "#{model} - #{brand.name}"
+  def model_colorway_brand
+    "#{model} (#{colorway})- #{brand.name}"
   end 
 end
