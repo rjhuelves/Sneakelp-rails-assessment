@@ -16,7 +16,7 @@ class SneakersController < ApplicationController
     end
     
     def index
-        @sneakers = Sneaker.all
+        @sneakers = Sneaker.order_by_rating 
     end
     
     def show
