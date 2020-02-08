@@ -1,24 +1,8 @@
-# README
+# Sneakelp
+Sneakelp is a Content Management System for sneakers. A user can create sneakers, brands, and write reviews for all the sneakers that are in the database. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tech/Framework used
+Ruby on Rails
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Installation 
+To use this app, just clone, run rake db:migrate, and then run your server. 
