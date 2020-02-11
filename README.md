@@ -3,6 +3,7 @@ Sneakelp is a Content Management System for sneakers. A user can create sneakers
 
 ## Tech/Framework used
 Ruby on Rails
+W3 Bootstrap Template
 
 ## Installation 
 To use this app, just clone, run rake db:migrate, and then run your server. 
